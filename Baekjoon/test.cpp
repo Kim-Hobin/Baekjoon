@@ -71,6 +71,7 @@ int main() {
 #include <vector>
 using namespace std;
 
+//DG
 int n, m;
 vector <int> asd;
 
