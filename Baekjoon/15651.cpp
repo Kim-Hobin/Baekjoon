@@ -6,29 +6,27 @@ const int MAX = 1001;
 
 int n, m;
 vector<int> stack;
-bool visited[MAX];
-
 
 void dfs() {
 	if (stack.size() == m) {
 		for (auto i : stack) {
 			cout << i << ' ';
 		}
-		cout << endl;
+		cout << '\n';
 		return;
 	}
 	for (int i = 1; i < n + 1; i++) {
-		if (!visited[i] && (stack.size() == 0 || stack.back() < i)) {
-			stack.push_back(i);
-			visited[i] = true;
-			dfs();
-			stack.pop_back();
-			visited[i] = false;
-		}
+		stack.push_back(i);
+		dfs();
+		stack.pop_back();
 	}
 }
 
 int main() {
+	ios::sync_with_stdio(false);
+	cin.tie(NULL);
+	cout.tie(NULL);
+
 	cin >> n >> m;
 	dfs();
 }
