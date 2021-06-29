@@ -1,28 +1,23 @@
 #include <iostream>
-#include <tuple>
+#include <string>
+#include <vector>
+#include <algorithm>
+
 using namespace std;
 
-//struct Info {
-//	string name;
-//	string birthday;
-//};
-
-pair <string, int> info[101];
-
 int main() {
-	/*struct Info Student[101];*/
-	int n, i = 1;
-	string day, month, year, birth;
-
+	int n;
 	cin >> n;
-	while (n--) {
-		cin >> info[i].first >> day >> month >> year;
 
-		birth = year + month + day;
-		info[i].second = birth - '0';
+	vector<pair<pair<int, int>, pair<int, string>>> info(n);
+
+	for(int i= 0; i < n; i++) {
+		cin >> info[i].second.second >> info[i].second.first >> info[i].first.second >> info[i].first.first;
 	}
 
+	sort(info.begin(), info.end());
 
+	cout << info[n - 1].second.second << "\n" << info[0].second.second << "\n";
 
 	return 0;
 }
