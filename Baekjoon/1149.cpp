@@ -19,6 +19,7 @@ int F(int num) {
 			cache[i][j] = cost[i][j] + min(cache[i - 1][j % 3 + 1], cache[i - 1][(j + 1) % 3 + 1]);
 		}
 	}
+
 	return min({ cache[num][1], cache[num][2], cache[num][3] });
 }
 
