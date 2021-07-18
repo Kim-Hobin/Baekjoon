@@ -2,8 +2,6 @@
 #include <vector>
 using namespace std;
 
-const int MAX = 1001;
-
 int n, m;
 vector<int> stack;
 bool visited[MAX];
