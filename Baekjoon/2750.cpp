@@ -25,6 +25,29 @@ void SelectionSort(int* num, int N) {
 	}
 }
 
+void BubbleSort(int* num, int N) {
+	for (int i = N; i > 1; i--) {
+		for (int j = 1; j < i; j++) {
+			if (num[j] > num[j + 1]) {
+				Swap(num[j], num[j + 1]);
+			}
+		}
+	}
+}
+
+void InsertionSort(int* num, int N) {
+	int i, j, key;
+	for (i = 1; i < N; i++) {
+		key = num[i];
+		j = i - 1;
+		while ((j >= 0) && (num[j] > key)) {
+			num[j + 1] = num[j];
+			j--;
+		}
+		num[j + 1] = key;
+	}
+}
+
 int main() {
 	int N;
 	cin >> N;
@@ -35,7 +58,7 @@ int main() {
 		cin >> num[i];
 	}
 
-	SelectionSort(num, N);
+	BubbleSort(num, N);
 
 	for (int i = 1; i <= N; i++) {
 		cout << num[i] << endl;
