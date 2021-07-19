@@ -4,8 +4,8 @@
 using namespace std;
 
 void hanoi(int n, int from, int by, int to) { // 원판 개수, 출발지, 경유지, 목적지
-	if (n == 1) {
-		cout << from << " " << to << "\n";
+	if (n == 0) {
+		return;
 	} 
 	else {
 		hanoi(n - 1, from, to, by); // 1번 기둥 n-1개의 원판을 2번 기둥으로 옮기는 과정
