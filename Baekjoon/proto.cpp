@@ -8,5 +8,6 @@ int main () {
 	cout.tie(NULL);
 
 
+
 	return 0;
 }
