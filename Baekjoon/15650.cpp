@@ -4,7 +4,7 @@ using namespace std;
 
 int n, m;
 vector<int> stack;
-bool visited[MAX];
+bool visited[9];
 
 
 void dfs() {

@@ -13,6 +13,8 @@ bool check(int current_y, int current_x, int number) {
 	// current_loc : blanks 인덱스
 	for (int i = 1; i < MAX; i++) {
 		// 가로
+		// number : 들어갈 수 있는 노드
+		// i : board의 인덱스
 		if (number == board[current_y][i]) {
 			return false;
 		}
@@ -36,10 +38,10 @@ void dfs(int current_loc) {
 		return;
 	}
 
-	int current_y = blanks[current_loc].first;//1
 	int current_x = blanks[current_loc].second;
+	int current_y = blanks[current_loc].first;
 
-	// 블링크의 빈칸, i : 들어갈 노드
+	// 블링크의 빈칸, i : 들어갈 수 있는 노드
 	for (int i = 1; i < MAX; i++) { 
 		if (check(current_y, current_x, i)) {;
 			board[current_y][current_x] = i;
