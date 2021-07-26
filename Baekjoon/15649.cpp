@@ -7,7 +7,6 @@ bool visit[9];
 vector<int> res;
 
 void func(int cnt) {
-
 	if (cnt >= m) {
 		for (int i = 0; i < res.size(); i++) {
 			cout << res[i] << ' ';
