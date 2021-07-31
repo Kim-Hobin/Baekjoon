@@ -32,7 +32,7 @@ int main() {
 		cnt.first = 0;
 		cnt.second = 0;
 
-		cnt =fibo(n);
+		cnt = fibo(n); 
 
 		cout << cnt.first << ' ' << cnt.second << endl;
 	}

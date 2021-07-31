@@ -16,7 +16,9 @@ int F(int num) {
 	}
 	for (int i = 2; i <= num; i++) {
 		for (int j = 1; j <= 3; j++) {
-			cache[i][j] = cost[i][j] + min(cache[i - 1][j % 3 + 1], cache[i - 1][(j + 1) % 3 + 1]);
+			cache[i][j] = cost[i][j] 
+				+ min(cache[i - 1][j % 3 + 1], 
+					cache[i - 1][(j + 1) % 3 + 1]);
 		}
 	}
 
