@@ -12,9 +12,7 @@ void maxVal(int cnt) { // 입력 : N, 출력 : 최대값
 	for (int i = 2; i <= n; i++) {
 		for (int j = 1; j <= i; j++) {
 			cache[i][j] += max(cache[i - 1][j - 1], cache[i - 1][j]) + tree[i][j];			
-			cout << cache[i][j] << ' ';
 		}
-		cout << endl;
 	}
 }
 
@@ -30,7 +28,10 @@ int main() {
 			cin >> tree[i][j];
 		}
 	}
+
 	maxVal(n);
+
+	cout << *max_element(cache[n], cache[n] + 500) << endl;
 
 	return 0;
 }
