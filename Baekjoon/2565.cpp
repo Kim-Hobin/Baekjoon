@@ -3,7 +3,7 @@
 #include <algorithm>
 
 #define endl "\n"
-#define MAX 500 + 1
+#define MAX 100 + 1
 using namespace std;
 
 struct Wire
@@ -12,16 +12,27 @@ struct Wire
 	int right;
 };
 
-int N;
+int N, tmp;
 int cache[MAX];
 Wire wire[MAX];
 
-void cal() {
-	for (int i = 0; i < N; i++) {
+bool cmp(Wire a, Wire b)
+{
+	return a.left < b.left;
+}
+
+void cal() 
+{
+	sort(wire + 1, wire + N + 1, cmp);
+
+	for (int i = 1; i <= N; i++) {
 		cache[i] = 1;
-		for (int j = 0; j <= i; j++) {
-			
+		for (int j = 1; j < i; j++) {
+			if (wire[i].right > wire[j].right) {
+				cache[i] = max(cache[i], cache[j] + 1);
+			}
 		}
+		tmp = max(tmp, cache[i]);
 	}
 }
 
@@ -32,10 +43,9 @@ int main()
 		cin >> wire[i].left >> wire[i].right;
 	}
 	
-	sort(wire.begin(), wire.end()); // wire.first 기준 정렬
-
 	cal();
 
+	cout << N - tmp << endl;
 
 	return 0;
 }
