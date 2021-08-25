@@ -7,6 +7,6 @@ string A, B;
 
 int main()
 {
-	
+	asd
 	return 0;
 }
