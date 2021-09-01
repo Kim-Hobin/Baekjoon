@@ -24,10 +24,6 @@ int main()
 
 	sort(room.begin(), room.end(), cmp);
 
-	for (int i = 0; i < N; i++) {
-		cout << room[i].first << ' '<< room[i].second << endl;
-	}
-	
 	int now = room[0].second, cnt = 1;
 	for (int i = 1; i < N; i++) {
 		if (now <= room[i].first) {
