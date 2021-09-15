@@ -1,46 +1,33 @@
-#include <iostream>
-#include <algorithm>
-
-#define endl "\n"
-#define MAX 1000 + 1
-#define INF 10000000 + 1
+#include<iostream>
+#include<algorithm>
 using namespace std;
 
-long ans;
+#define MAX 1000000000
 
-
-void cal()
-{
-	int p_min = INF;
-	for (int i = 1; i < N; i++) {
-		p_min = min(p_min, P[i]);
-		ans += p_min * D[i];
-	}
-}
-
-void input()
-{
-	for (int i = 1; i < N; i++)
-		cin >> D[i];
-	for (int i = 1; i <= N; i++)
-		cin >> P[i];
-}
+long long dist[100001];
+long long price[100001];
+long long N, sum;
+long long greedy;
 
 int main()
 {
-	ios_base::sync_with_stdio(false);
-	cin.tie(NULL);
-	cout.tie(NULL);
-
-	int N;
 	cin >> N;
-	int D[N], P[N];
 
-	input();
+	for (int i = 1; i <= N - 1; i++)
+		cin >> dist[i];
 
-	cal();
+	for (int i = 1; i <= N; i++)
+		cin >> price[i];
 
-	cout << ans << endl;
+	greedy = MAX;
 
-	return 0;
+	for (int i = 1; i <= N - 1; i++)
+	{
+		if (price[i] < greedy)
+			greedy = price[i];
+		sum += greedy * dist[i];
+	}
+
+	cout << sum;
+
 }
