@@ -42,9 +42,9 @@ int empty()
 
 int main()
 {
-	int n;
-	cin >> n;
-	while (n--) {
+	int N;
+	cin >> N;
+	while (N--) {
 		string str;
 		cin >> str;
 		if (str == "push") {
